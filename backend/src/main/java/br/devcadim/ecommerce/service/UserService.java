@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -30,6 +31,7 @@ public class UserService {
         newUser.setName(user.name());
         newUser.setEmail(user.email());
         newUser.setPassword(passwordEncoder.encode(user.password()));
+        newUser.setCreated_at(LocalDateTime.now());
         try {
             newUser.setUserType(UserType.valueOf(user.userType().toUpperCase()));
         } catch (IllegalArgumentException e) {
@@ -51,7 +53,7 @@ public class UserService {
 
             userRepository.delete(user);
         } catch (EntityNotFoundException e) {
-            throw new EntityNotFoundException("User " + " not found");
+            throw new EntityNotFoundException("User " + email + " not found");
         }
 
     }

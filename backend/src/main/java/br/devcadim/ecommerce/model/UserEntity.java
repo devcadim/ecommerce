@@ -4,6 +4,7 @@ import br.devcadim.ecommerce.dto.UpdateUserDTO;
 import jakarta.persistence.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -26,6 +27,12 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", nullable = false, length = 20)
     private UserType userType;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime created_at;
+
+    @Column(name = "deleted_at")
+    private LocalDateTime deleted_at;
 
     public UserEntity () {}
 
@@ -76,6 +83,21 @@ public class UserEntity {
         this.userType = userType;
     }
 
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public LocalDateTime getDeleted_at() {
+        return deleted_at;
+    }
+
+    public void setDeleted_at(LocalDateTime deleted_at) {
+        this.deleted_at = deleted_at;
+    }
 
     public void updateFromDTO(UpdateUserDTO dto, PasswordEncoder passwordEncoder) {
         dto.name().ifPresent(newName -> {
@@ -83,7 +105,7 @@ public class UserEntity {
         });
 
         dto.password().ifPresent(newPassword -> {
-            if(!newPassword.isBlank()) this.setPassword(newPassword);
+            if(!newPassword.isBlank()) this.setPassword(passwordEncoder.encode(newPassword));
         });
 
         dto.userType().ifPresent(newUserType -> {
