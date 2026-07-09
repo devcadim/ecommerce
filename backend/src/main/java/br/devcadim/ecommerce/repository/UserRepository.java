@@ -1,6 +1,6 @@
 package br.devcadim.ecommerce.repository;
 
-import br.devcadim.ecommerce.model.UserEntity;
+import br.devcadim.ecommerce.model.user.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
-package br.devcadim.ecommerce.model;
+package br.devcadim.ecommerce.model.user;
 
-import br.devcadim.ecommerce.dto.UpdateUserDTO;
+import br.devcadim.ecommerce.dto.user.UpdateUserDTO;
 import jakarta.persistence.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

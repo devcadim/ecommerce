@@ -1,9 +1,9 @@
 package br.devcadim.ecommerce.controller;
 
 
-import br.devcadim.ecommerce.dto.RegisterUserDTO;
-import br.devcadim.ecommerce.dto.UpdateUserDTO;
-import br.devcadim.ecommerce.model.UserEntity;
+import br.devcadim.ecommerce.dto.user.RegisterUserDTO;
+import br.devcadim.ecommerce.dto.user.UpdateUserDTO;
+import br.devcadim.ecommerce.model.user.UserEntity;
 import br.devcadim.ecommerce.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

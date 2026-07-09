@@ -1,4 +1,4 @@
-package br.devcadim.ecommerce.dto;
+package br.devcadim.ecommerce.dto.user;
 
 import java.util.Optional;
 

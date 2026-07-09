@@ -1,10 +1,10 @@
 package br.devcadim.ecommerce.service;
 
 
-import br.devcadim.ecommerce.dto.RegisterUserDTO;
-import br.devcadim.ecommerce.dto.UpdateUserDTO;
-import br.devcadim.ecommerce.model.UserEntity;
-import br.devcadim.ecommerce.model.UserType;
+import br.devcadim.ecommerce.dto.user.RegisterUserDTO;
+import br.devcadim.ecommerce.dto.user.UpdateUserDTO;
+import br.devcadim.ecommerce.model.user.UserEntity;
+import br.devcadim.ecommerce.model.user.UserType;
 import br.devcadim.ecommerce.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

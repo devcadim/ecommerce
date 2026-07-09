@@ -1,4 +1,4 @@
-package br.devcadim.ecommerce.model;
+package br.devcadim.ecommerce.model.user;
 
 public enum UserType {
     CUSTOMER,
